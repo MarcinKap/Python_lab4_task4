@@ -1,7 +1,7 @@
-from .abstract_view import AbstractView
+from mvc.views.abstract_view import AbstractView
 
 
-class ConsoleDateView(AbstractView):
+class ConsoleGradebookListView(AbstractView):
     def __init__(self, name, model):
         super( ).__init__(name, model)
 
@@ -14,8 +14,6 @@ class ConsoleDateView(AbstractView):
     def show(self):
         self.model.notify( )
 
-
-
-
-
-
+    def wypisz_liste_dziennikow(self, lista_dziennikow):
+        print('\nWypisz listę dzienników...')
+        lista_dziennikow.wypisz_liste_dziennikow( )

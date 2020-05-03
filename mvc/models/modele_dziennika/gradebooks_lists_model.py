@@ -2,11 +2,10 @@ from mvc.models.abstract_model import AbstractModel
 from mvc.models.modele_dziennika.gradebook_model import Gradebook
 
 
-class Gradebooks_list(AbstractModel):
+class GradebooksList(AbstractModel):
     def __init__(self):
         super( ).__init__( )
         self.__lista_dziennikow = []
-
 
     def dodanie_dziennika(self, Gradebook):
         self.__lista_dziennikow.append(Gradebook)

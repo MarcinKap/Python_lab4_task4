@@ -1,7 +1,8 @@
-from mvc.controllers.app import ConsoleApp
+from mvc.app import ConsoleApp
 from mvc.controllers.console_date_controller import ConsoleDateController
-from mvc.controllers.graph_app import GraphApp
-from mvc.controllers.models_controllers.graphic_date_controller import GraphicDateController
+from mvc.controllers.kontrolery_dziennika.gradebooks_lists_controller import GradebooksListController
+from mvc.graph_app import GraphApp
+from mvc.controllers.graphic_date_controller import GraphicDateController
 
 
 def main_win():
@@ -11,8 +12,8 @@ def main_win():
 
 def main_console():
     controller = ConsoleDateController()
-
-    app = ConsoleApp(controller)
+    gradebook_list_controller = GradebooksListController()
+    app = ConsoleApp(controller, gradebook_list_controller)
     app.run_app()
 
 if '__main__' == __name__:

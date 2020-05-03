@@ -18,14 +18,14 @@ class GradebooksListController(AbstractController):
         return True
 
     def stworz_dziennik_na_bazie_starego(self, stary_dziennik, nazwa_nowego_dziennika):
-        print('\nUtwórz nowy dziennik na podstawie starego...')
-        lista_dziennikow.dodanie_dziennika_na_podstawie_starego(nazwa_nowego_dziennika, stary_dziennik)
+        self.model.dodanie_dziennika_na_podstawie_starego(nazwa_nowego_dziennika, stary_dziennik)
 
-    def wypisz_liste_dziennikow(self):
-        print('\nWypisz listę dzienników...')
-        lista_dziennikow.wypisz_liste_dziennikow( )
+    def stworz_dziennik_i_dodaj_do_listy(self, nazwa_nowego_dziennika):
+        print("wykonuje sie: stworz dziennik i dodaj do listy")
+        nowy_dziennik = Gradebook(nazwa_nowego_dziennika)
+        self.model.dodanie_dziennika(nowy_dziennik)
 
-    def znajdz_dziennik(self, nazwa_dziennika):
+    def znajdz_dziennik(self, lista_dziennikow, nazwa_dziennika):
         print('\nZnajdz dziennik po nazwie...')
         print('\nPodaj nazwe:', end=' ')
         return lista_dziennikow.wyszukaj_dziennik_po_nazwie(nazwa_dziennika)

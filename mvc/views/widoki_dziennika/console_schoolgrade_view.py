@@ -1,7 +1,7 @@
-from .abstract_view import AbstractView
+from mvc.views.abstract_view import AbstractView
 
 
-class ConsoleDateView(AbstractView):
+class ConsoleSchoolGradeView(AbstractView):
     def __init__(self, name, model):
         super( ).__init__(name, model)
 
@@ -13,9 +13,3 @@ class ConsoleDateView(AbstractView):
 
     def show(self):
         self.model.notify( )
-
-
-
-
-
-

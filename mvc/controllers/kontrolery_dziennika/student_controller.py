@@ -18,10 +18,9 @@ class StudentController(AbstractController):
         return True
 
     def dodaj_ocene(self,dziennik_ocen, student, dodawana_ocena, waga_dodawanej_oceny):
-        print('\nPrzypisanie oceny oraz jej wagi danemu studentowi...')
-        print('\nPodaj imie:', end=' ')
         wyszukany_student = dziennik_ocen.wyszukaj_studenta_po_imieniu(student)
         if wyszukany_student is not None:
             wyszukany_student.dodaj_ocene(School_grade(dodawana_ocena, waga_dodawanej_oceny))
+            return True
         else:
-            print('Nie udalo sie znaleźć studenta\n')
+            return False

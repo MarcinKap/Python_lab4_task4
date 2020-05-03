@@ -1,9 +1,9 @@
-from .app import AbstractApp
+from mvc.app import AbstractApp
 # from PyQt5.QtWidgets import QApplication
 # from models.date_time_model import DateTimeModel
 # from views.graph_view import MainWindowView, GraphDateView, GraphActionButton
-from ..models.date_time_model import DateTimeModel
-from ..views.graph_view import GraphDateView, GraphActionButton, MainWindowView
+from mvc.models.date_time_model import DateTimeModel
+from mvc.views.graph_view import GraphDateView, GraphActionButton, MainWindowView
 from PyQt5.QtWidgets import QApplication
 
 class GraphApp(AbstractApp):
