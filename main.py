@@ -1,6 +1,6 @@
 from mvc.app import ConsoleApp
 from mvc.controllers.console_date_controller import ConsoleDateController
-from mvc.controllers.kontrolery_dziennika.gradebooks_lists_controller import GradebooksListController
+from mvc.controllers.console_controllers.gradebooks_lists_controller import GradebooksListController
 from mvc.graph_app import GraphApp
 from mvc.controllers.graphic_date_controller import GraphicDateController
 

@@ -4,6 +4,7 @@ from mvc.views.abstract_view import AbstractView
 class ConsoleGradebookView(AbstractView):
     def __init__(self, name, model):
         super( ).__init__(name, model)
+        self.model = model
 
     def add_component(self, comp):
         pass
@@ -26,7 +27,29 @@ class ConsoleGradebookView(AbstractView):
         else:
             print('Nie udalo sie znaleźć studenta\n')
 
-    def wypisz_liste_studentow(self, dziennik_ocen):
+    def wypisz_liste_studentow(self):
         print('\nWyświetl listę studentów...')
         print('Lista studentów:')
-        dziennik_ocen.wypisz_liste_studentow( )
+        for x in self.model.lista_studentow:
+            print(f'{x.imie}')
+        print('\n')
+        # dziennik_ocen.wypisz_liste_studentow( )
+
+    def wyswietl_srednia_ocen_wszystkich_studentow(self):
+        for student in self.model.lista_studentow:
+            if (len(student.lista_ocen) > 0):
+                sum = 0
+                suma_wag = 0
+                for ocena in student.lista_ocen:
+                    sum = sum + ocena.ocena * ocena.waga_oceny
+                    suma_wag = suma_wag + ocena.waga_oceny
+                srednia = sum / suma_wag
+            else:
+                srednia = 0
+
+            if srednia == 0:
+                print(f'Student {student.imie} nie ma żadnych ocen')
+            else:
+                print(f'Średnia ocen dla studenta {student.imie} to', end=' ')
+                print(srednia)
+        print('\n')

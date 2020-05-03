@@ -4,6 +4,7 @@ from mvc.views.abstract_view import AbstractView
 class ConsoleSchoolGradeView(AbstractView):
     def __init__(self, name, model):
         super( ).__init__(name, model)
+        self.model = model
 
     def add_component(self, comp):
         pass
